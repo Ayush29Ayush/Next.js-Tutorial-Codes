@@ -1,0 +1,5 @@
+#! Refer => https://www.youtube.com/playlist?list=PLC3y8-rFHvwjOKd6gdf4QtV1uYNiQnruI
+
+#? Next.js 14 Tutorial - 2 - Hello World
+1. Create a new project using => npx create-next-app@latest
+2. Accept all the default values except the aliasing asked at the end
