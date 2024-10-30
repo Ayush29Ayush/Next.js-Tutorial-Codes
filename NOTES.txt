@@ -97,6 +97,8 @@ export default function ProductDetails({params}) {
 }
 "
 
+Error: 1 - error TS2322: Type 'any' is not assignable to type 'string'.
+
 ** [productId]/page.tsx ** Version 2 (After fixing the TS error stating that params has type 'any')
 "
 interface Props {
@@ -113,5 +115,28 @@ or
 "
 export default function ProductDetails({params}: {params: {productId: string}}) {
   return <h1>Details about the product {params.productId}</h1>;
+}
+"
+
+Error : 2 
+"
+✓ Compiled /products/[productId] in 124ms
+Error: Route "/products/[productId]" used `params.productId`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at createParamsAccessError (turbopack://[project]/node_modules/next/dist/src/server/request/params.ts:467:9)
+    at getMessage (turbopack://[project]/node_modules/next/dist/src/server/create-deduped-by-callsite-server-error-logger.ts:46:20)
+    at warnForSyncAccess (turbopack://[project]/node_modules/next/dist/src/server/request/params.ts:445:4)
+    at syncIODev (turbopack://[project]/node_modules/next/dist/src/server/request/params.ts:403:10)
+    at ProductDetails (turbopack://[project]/src/app/products/[productId]/page.tsx:2:49)
+  1 | export default function ProductDetails({params}: {params: {productId: string}}) {
+> 2 |     return <h1>Details about the product {params.productId}</h1>;
+    |                                                 ^
+  3 | }
+"
+
+** [productId]/page.tsx ** Version 3 (After fixing the async await error)
+"
+export default async function ProductDetails({params}: {params: {productId: string}}) {
+    const {productId} = await params
+    return <h1>Details about the product {productId}</h1>;
 }
 "
