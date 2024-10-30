@@ -78,4 +78,40 @@ export default function Home() {
 
 #? Next.js 14 Tutorial - 6 - Nested Routes
 
+* Static nested routes implementation
 * Create folder inside folder for nested routes. Each folder will be a page so add a page.js or page.tsx file in it.
+
+#? Next.js 14 Tutorial - 7 - Dynamic Routes
+
+* Dynamic routes implementation
+* Inside the src/app directory, create a new folder called products and add a page.tsx file in it. With this we will get a page for "localhost:3000/products/"
+* Now inside the products folder, create a new folder called [productId] and add a page.tsx file in it. With this we will get a page for "localhost:3000/products/[productId]" where [productId] is a dynamic route so we can add any value to it. Example => "localhost:3000/products/1" , "localhost:3000/products/2" etc.
+* This is possible because Next.js treats folders with [] as dynamic routes.
+
+* Now we can also use the params to generate dynamic text or data related to it.
+
+** [productId]/page.tsx ** Version 1
+"
+export default function ProductDetails({params}) {
+    return <h1>Details about the product {params.productId}</h1>;
+}
+"
+
+** [productId]/page.tsx ** Version 2 (After fixing the TS error stating that params has type 'any')
+"
+interface Props {
+  productId: string;
+}
+
+export default function ProductDetails(props: Props) {
+  return <h1>Details about the product {props.productId}</h1>;
+}
+"
+
+or 
+
+"
+export default function ProductDetails({params}: {params: {productId: string}}) {
+  return <h1>Details about the product {params.productId}</h1>;
+}
+"
