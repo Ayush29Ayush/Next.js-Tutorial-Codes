@@ -155,3 +155,24 @@ export default async function ReviewDetails({params}: {params: {productId: strin
     return <h1>Details about the review {reviewId} from product {productId}</h1>;
 }
 "
+
+#? Next.js 14 Tutorial - 9 - Catch all Segments
+
+* Catch all segments implementation
+* Inside the src/app directory, create a new folder called docs, then inside it a new folder called [...slug] and add a page.tsx file in it. With this we will get a page for "localhost:3000/docs/[...slug]" where [...slug] is a catch-all segment.
+** [...slug]/page.tsx **
+"
+export default async function Docs({params}: {params: {slug: string[]}}) {
+    const {slug} = await params
+    if (slug.length === 2) {
+      return <h1>Viewing docs for feature {slug[0]} and concept {slug[1]}</h1>
+    } 
+    else if (slug.length === 1) {
+      return <h1>Viewing docs for feature {slug[0]}</h1>;
+    }
+    else
+    {
+        return <h1>Docs Home Page</h1>;
+    }
+}
+"
