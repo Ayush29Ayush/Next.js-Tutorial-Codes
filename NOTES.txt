@@ -182,3 +182,7 @@ export default async function Docs({params}: {params: {slug: string[]}}) {
 * If in the browser, you visit about to which is not a valid page, then Next.js will automatically show a 404 page.
 * In src/app directory, create a new file called not-found.tsx. This NotFound() will be for overall application.
 * For specific pages, create a new file called not-found.tsx inside that specific folder. This NotFound() will be for that specific page. Refer to src/app/products/[productId]/reviews/[reviewId]/not-found.tsx
+
+#? Next.js 14 Tutorial - 11 - File Colocation
+
+* So in summary the folder needs to have a page.tsx or it won't work and you can create a separate component to keep your reusable components.
