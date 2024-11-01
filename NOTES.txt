@@ -202,3 +202,28 @@ export default async function Docs({params}: {params: {slug: string[]}}) {
 * If you want to include an underscore in URL segments, you can prefix the folder name with "%5F," which is the URL-encoded form of an underscore
 
 * Rather than "_lib", use "%5Flib" to view the private route in the browser as "%5F" is equivalent to "_"
+
+#? Next.js 14 Tutorial - 13 - Route Groups
+
+* Allows us to logically group our routes and project files without affecting the URL path structure
+
+**Let's implement authentication routes**
+
+* Register
+* Login
+* Forgot password
+
+#! Approach - 1 (Messy and Not feasible)
+* Create new folders called "login", "register" and "forgot-password" with a page.tsx in each of them.
+* This approach is unorganized and any new developer may not know which folder to look at.
+* Example url => http://localhost:3000/login
+
+#! Approach - 2 (Feasible but gets the auth name in the URL)
+* Create new folder called "auth" with a page.tsx in it.
+* Move the above 3 folders into the "auth" folder.
+* Example url => http://localhost:3000/auth/login
+
+#! Approach - 3 (Best as it does not get the auth name in the URL)
+* Rather than naming the folder "auth", make it "(auth)"
+* This will omit the folder name i.e auth from the URL.
+* Example url => http://localhost:3000/login
