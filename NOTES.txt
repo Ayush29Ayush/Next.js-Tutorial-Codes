@@ -227,3 +227,16 @@ export default async function Docs({params}: {params: {slug: string[]}}) {
 * Rather than naming the folder "auth", make it "(auth)"
 * This will omit the folder name i.e auth from the URL.
 * Example url => http://localhost:3000/login
+
+#? Next.js 14 Tutorial - 14 - Layouts
+
+* A page is UI that is unique to a route
+* A layout is UI that is shared between multiple pages in the app
+
+How to Create Layouts?
+
+* You can define a layout by default exporting a React component from a layout.js or layout.tsx file.
+* That component should accept a children prop that will be populated with a child page during rendering.
+
+* Observe the default layout.tsx file in src/app directory.
+
