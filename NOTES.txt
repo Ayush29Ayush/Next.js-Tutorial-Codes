@@ -240,3 +240,9 @@ How to Create Layouts?
 
 * Observe the default layout.tsx file in src/app directory.
 
+#? Next.js 14 Routing - 15 - Nested Layouts
+
+* You can create layout for a specific page/route by creating a layout.tsx inside that specific folder.
+* Create a layout.tsx at src/app/products/[productId]/layout.tsx
+
+Execution Order => First the app's layout.tsx gets rendered and as we go to products/[productId], the children of the main layout gets replaced with the products/[productId] layout.tsx and so on.
