@@ -254,3 +254,7 @@ Uses:
 * To selectively apply a layout to certain segments while leaving others unchanged 
 
 * Refer to src/app/(auth)/(with-auth-layout) folder
+
+#? Next.js 14 Tutorial - 17 - Routing Metadata
+
+* You can set metadata in the layout.tsx or page.tsx
