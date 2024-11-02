@@ -246,3 +246,11 @@ How to Create Layouts?
 * Create a layout.tsx at src/app/products/[productId]/layout.tsx
 
 Execution Order => First the app's layout.tsx gets rendered and as we go to products/[productId], the children of the main layout gets replaced with the products/[productId] layout.tsx and so on.
+
+#? Next.js 14 Tutorial - 16 - Route Group Layout
+
+Uses:
+* To organize your project in a manner that does not affect the url
+* To selectively apply a layout to certain segments while leaving others unchanged 
+
+* Refer to src/app/(auth)/(with-auth-layout) folder
