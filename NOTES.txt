@@ -395,3 +395,23 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
     );
 }
 "
+
+#? Next.js 14 Tutorial - 23 - Loading UI
+
+* Allows creating loading states for route segments
+* Loading state appears immediately upon navigation
+* Provides assurance of responsiveness and active content loading
+
+* Create a loading.tsx at the src/app/blog/loading.tsx
+"
+export default function Loading() {
+    return <h1>Loading...</h1>;
+}
+"
+
+* You can display the loading state as soon as a user navigates to a new route
+* The immediate feedback reassures users that their action has been acknowledged
+* Reduces perceived loading times
+* Makes the application feel more responsive
+* Next.js allows the creation of shared layouts that remain interactive while new route segments are loading
+* Users can continue interacting with certain parts of the application, such as a navigation menu or sidebar, even if the main content is still being fetched
