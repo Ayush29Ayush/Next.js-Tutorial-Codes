@@ -415,3 +415,46 @@ export default function Loading() {
 * Makes the application feel more responsive
 * Next.js allows the creation of shared layouts that remain interactive while new route segments are loading
 * Users can continue interacting with certain parts of the application, such as a navigation menu or sidebar, even if the main content is still being fetched
+
+#? PS D:\Next.js Tutorial Codevolution\24. Next.js 14 Tutorial - 24 - Error Handling>
+
+#! Approach 1 - Write code to throw error on specific condition
+* Make changes in src/app/products/reviews/[reviewId]/page.tsx
+"
+import {notFound} from 'next/navigation'
+
+function getRandomInt(count: number) {
+    return Math.floor(Math.random() * count)    
+}
+
+export default async function ReviewDetails({params}: {params: {productId: string; reviewId: string}}) {
+    const {productId, reviewId} = await params
+
+    const random = getRandomInt(5);
+    console.log(random);
+
+    if (random > 1) {
+        throw new Error('Something went wrong. Error loading review. Error code: 500')
+    }
+
+    if (parseInt(reviewId) > 10) {
+        notFound()
+    }
+
+    return <h1>Details about the review {reviewId} from product {productId}</h1>;
+}
+"
+
+#! Approach 2 - Create a new file named error.tsx. This will catch the error messgae and show it in the page rather than throwing an error
+"
+"use client";
+
+export default function ErrorBoundary({ error }: { error: Error }) {
+    return (
+        <div>
+            {/* <h2>ErrorBoundary: Error in Review</h2> */}
+            <p>{error.message}</p>
+        </div>
+    );
+}
+"
