@@ -482,3 +482,7 @@ export default function ErrorBoundary({ error, reset }: { error: Error; reset: (
 * Errors bubble up to the closest parent error boundary.
 * An error.tsx file will cater to errors for all its nested child segments.
 * By positioning error.tsx files at different levels in the nested folders of a route, you can achieve a more granular level of error handling.
+
+#? Next.js 14 Tutorial - 27 - Handling Errors in Layouts
+
+* error.tsx and layout.tsx should be on same level in the folder structure in a directory
