@@ -525,7 +525,7 @@ export default function DashboardLayout({
 }
 "
 
-#! Approach 2
+#! Approach 2 (Using "@folder_name" slots)
 * We will create slots for Parallel Routes using "@folder_name" with page.tsx in each of it.
 * We will create "@notifications" folder inside "@complex-dashboard" folder with a page.tsx file
 ** page.tsx **
