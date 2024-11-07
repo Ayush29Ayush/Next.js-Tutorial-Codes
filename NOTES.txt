@@ -486,3 +486,110 @@ export default function ErrorBoundary({ error, reset }: { error: Error; reset: (
 #? Next.js 14 Tutorial - 27 - Handling Errors in Layouts
 
 * error.tsx and layout.tsx should be on same level in the folder structure in a directory
+
+#? Next.js 14 Tutorial - 28 - Parallel Routes
+
+* Check the scenario in the IMAGES folder
+
+* Create a new folder named "complex-dashboard" and inside create a layout.tsx and page.tsx file
+
+#! Approach 1 (Traditional Method)
+** page.tsx **
+"
+export default function ComplexDashboardPage() {
+    return (
+        <h1>Complex Dashboard Page</h1>
+    )
+}
+"
+
+** layout.tsx **
+"
+import UserAnalytics from "@/components/UserAnalytics";
+import RevenueMetrics from "@/components/RevenueMetrics";
+import Notifications from "@/components/Notifications";
+
+export default function DashboardLayout({
+    children
+}: {
+    children: React.ReactNode
+}) {
+    return (
+        <>
+            <div>{children}</div> {/* Content from page.tsx */}
+            <UserAnalytics /> {/* User Analytics component */}
+            <RevenueMetrics /> {/* Revenue Metrics component */}
+            <Notifications /> {/* Notifications component */}
+        </>
+    )
+}
+"
+
+#! Approach 2
+* We will create slots for Parallel Routes using "@folder_name" with page.tsx in each of it.
+* We will create "@notifications" folder inside "@complex-dashboard" folder with a page.tsx file
+** page.tsx **
+"
+export default function Notifications() {
+    return (
+        <h1>Notifications</h1>
+    )
+}
+"
+* Similarly create "@revenue" and "@users" folder with a page.tsx file
+* Create a components folder in src directory and create a card component.
+** card.tsx **
+"
+const Card = ({children}: {children: React.ReactNode}) => {
+    const cardStyle = {
+        padding: "100px",
+        margin: "10px",
+        boxShadow: "0 0 15px rgba(0, 0, 0, 0.1)",
+        border: "1px solid #f0f0f0",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    };
+
+    return <div style={cardStyle}>{children}</div>;
+}
+
+export default Card;
+"
+
+** notifications/page.tsx **
+"
+import Card from "@/components/card";
+
+export default function Notifications() {
+  return <Card>Notifications</Card>;
+}
+"
+
+** complex-dashboard/layout.tsx **
+"
+export default function DashboardLayout({
+    children,
+    users,
+    revenue,
+    notifications
+}: {
+    children: React.ReactNode,
+    users: React.ReactNode,
+    revenue: React.ReactNode,
+    notifications: React.ReactNode
+}) {
+    return (
+        <>
+            <div>{children}</div> {/* Content from page.tsx */}
+            <div style={{ display: "flex" }}>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <div>{users}</div>
+                    <div>{revenue}</div>
+                </div>
+                <div style={{ display: "flex", flex: 1 }}>{notifications}</div>
+            </div>
+        </>
+    )
+}
+"
