@@ -593,3 +593,9 @@ export default function DashboardLayout({
     )
 }
 "
+
+#? Next.js 14 Tutorial - 29 - Unmatched Routes
+
+* Refer images
+* Create a archived folder with page.tsx inside a slot i.e @folder_name
+* Also create a default.tsx in the parent folder and the child folder i.e the slots folders to have a fallback page for unmatched routes
