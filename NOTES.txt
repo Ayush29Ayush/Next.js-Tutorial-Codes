@@ -603,3 +603,13 @@ export default function DashboardLayout({
 #? Next.js 14 Tutorial - 30 - Conditional Routes
 
 * render page according to the condition if ifLoggedIn is true, then show the page else show the login page
+
+#? Next.js 14 Tutorial - 31 - Intercepting Routes
+
+* The name of the folder should be "(.)folder_name" with a page.tsx
+* The page will be shown at the first time the user visits the route/page, and after reloading it will show te regular page from "folder_name"
+* Check Images to know more about (.), (..) and (...)
+
+#? Next.js 14 Tutorial - 32 - Parallel Intercepting Routes
+
+* To be covered later
