@@ -599,3 +599,7 @@ export default function DashboardLayout({
 * Refer images
 * Create a archived folder with page.tsx inside a slot i.e @folder_name
 * Also create a default.tsx in the parent folder and the child folder i.e the slots folders to have a fallback page for unmatched routes
+
+#? Next.js 14 Tutorial - 30 - Conditional Routes
+
+* render page according to the condition if ifLoggedIn is true, then show the page else show the login page
