@@ -613,3 +613,10 @@ export default function DashboardLayout({
 #? Next.js 14 Tutorial - 32 - Parallel Intercepting Routes
 
 * To be covered later
+
+#? Next.js 14 Tutorial - 33 - Route Handlers
+
+* Route handlers are used to handle the request and response of a route.
+* Check the IMAGES folder
+
+* Always create a route folder with a page.tsx file in it. Then inside that route folder, create a api folder with route.ts file in it.
