@@ -625,3 +625,7 @@ export default function DashboardLayout({
 
 * Create a folder named "comments" and inside it create a data.ts file and a route.tsx file.
 * Make a api request to the route and get the response.
+
+#? Next.js 14 Tutorial - 35 - Handling POST Request
+
+* In the route.tsx file, make a POST request to the route and get the response.
