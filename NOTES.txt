@@ -620,3 +620,8 @@ export default function DashboardLayout({
 * Check the IMAGES folder
 
 * Always create a route folder with a page.tsx file in it. Then inside that route folder, create a api folder with route.ts file in it.
+
+#? Next.js 14 Tutorial - 34 - Handling GET Request
+
+* Create a folder named "comments" and inside it create a data.ts file and a route.tsx file.
+* Make a api request to the route and get the response.
