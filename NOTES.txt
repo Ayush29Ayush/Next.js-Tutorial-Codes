@@ -767,3 +767,35 @@ export async function GET(request: NextRequest) {
   });
 }
 "
+
+#? Next.js 14 Tutorial - 43 - Caching in Route Handlers
+
+* Caching was a default behaviour in Next.js 14 but it is now configurable in Next.js 15
+
+#! Approach 1
+** time/route.tsx **
+"
+export async function GET() {
+    return new Response(new Date().toISOString(), {
+      status: 200,
+      headers: {
+        "Content-Type": "text/plain",
+        "Cache-Control": "max-age=3600", // cache for 1 hour
+      },
+    });
+  }
+"
+
+#! Approach 2
+** time/route.tsx **
+"
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const response = new NextResponse(new Date().toISOString());
+  response.cache({
+    maxAge: 3600, // cache for 1 hour
+  });
+  return response;
+}
+"
