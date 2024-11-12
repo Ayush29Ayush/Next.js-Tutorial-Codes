@@ -799,3 +799,38 @@ export async function GET() {
   return response;
 }
 "
+
+#? Next.js 14 Tutorial - 44 - Middleware
+
+* Create a middleware.ts file in the src folder
+
+* There are 2 ways to use middleware
+a) custom matcher config
+b) conditional statement
+
+** custom matcher config
+"
+//! Approach 1 (using matcher config)
+import { NextResponse, NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+    return NextResponse.redirect(new URL("/", request.url));
+}
+
+export const config = {
+    matcher: "/profile",
+};
+"
+
+** conditional statement
+"
+//! Approach 2 
+import { NextResponse, NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+    if (request.nextUrl.pathname === "/profile")
+    {
+        return NextResponse.redirect(new URL("/hello", request.url));
+    }
+}
+"
