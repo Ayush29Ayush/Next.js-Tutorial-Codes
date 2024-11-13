@@ -874,3 +874,39 @@ export function middleware(request: NextRequest) {
 * Client Components, on the other hand, work in the user's browser and handle all the interactive parts of the app, like clicking and typing
 
 * They can also be rendered on the server for a fast initial load of the site. This setup helps make websites faster, more secure, and easier for everyone to use, no matter where they are or what device they're using.
+
+#? Next.js 14 Tutorial - 50 - Server and Client Components
+
+* By default, every component in Next.js is a server component.
+* In the src/app, create a about folder and a page.tsx inside it.
+
+#! console.log gives message in terminal means the component is server side component by default
+** about/page.tsx **
+"
+export default function AboutPage() {
+    console.log("About Page Server Component"); // This will show this message in the code editors terminal, which will signify that this is a server component
+    return <h1>About Page</h1>
+}
+"
+
+* In the src/app, create a dashboard folder and a page.tsx inside it.
+
+#! console.log gives message in browser console means the component is a client side component
+** dashboard/page.tsx **
+"
+"use client"
+
+import { useState } from "react"
+
+export default function DashboardPage() {
+    console.log("Dashboard Client Component!!!");
+    const [name, setName] = useState("");
+    return (
+        <div>
+            <h1>Dashboard Page</h1>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <p>Hello, {name}! </p>
+        </div>
+    )
+}
+"
