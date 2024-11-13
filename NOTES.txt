@@ -839,7 +839,38 @@ export function middleware(request: NextRequest) {
 
 * Rendering is the process that transforms the code you write into user interfaces.
 * In Next.js, choosing the right time and place to do this rendering is vital for building a performant application.
-* CSS, SSR and RSCs
+* CSR, SSR and RSCs
 * Rendering in React → Rendering in Next.js
 * If you don't fully understand something in a video, try watching it again, maybe even a third time.
 
+#? Next.js 14 Tutorial - 46 - Client-side Rendering (CSR)
+
+* Client-side rendering is the process of rendering the entire application on the client-side.
+* It involves loading and rendering the entire application using JavaScript.    
+
+#? Next.js 14 Tutorial - 47 - Server-side Rendering (SSR)
+
+* Server-side rendering is the process of rendering the entire application on the server-side.
+* It uses server-side code to generate the HTML and JavaScript that is then sent to the client.
+* Hydration is the process of matching the server-rendered HTML with the client-side DOM to ensure a smooth transition between the two. This happens before the initial content is loaded into the DOM.
+
+#? Next.js 14 Tutorial - 48 - Suspense for SSR
+
+* Refer video and refer images
+* Using Suspense for SSR helps us solve various major issues from SSR.
+
+#? Next.js 14 Tutorial - 49 - React Server Components (RSC)
+
+* Next.js has its app router build on the architecture of RSC(React Server Components)
+
+**RSC Key Takeaways**
+
+* RSC introduce a new way of building React apps by separating components into two types: Server Components and Client Components
+
+* Server Components run only on the server, accessing data and preparing content without being sent to the browser, which makes the app faster for users because less information needs to download
+
+* They can't manage clicks or interactions directly
+
+* Client Components, on the other hand, work in the user's browser and handle all the interactive parts of the app, like clicking and typing
+
+* They can also be rendered on the server for a fast initial load of the site. This setup helps make websites faster, more secure, and easier for everyone to use, no matter where they are or what device they're using.
