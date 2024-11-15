@@ -977,3 +977,71 @@ export default function ProductDetailPage() {
   );
 }
 "
+
+#? Next.js 14 Tutorial - 56 - Server-only Code
+
+* "server-only" npm package provides a build in error mechanism if the developer accidently import one of the server modules to client side.
+* pip install server-only
+
+* Create a utils folder and a server-utils.ts file
+** server-utils.ts **
+"
+import "server-only"
+
+export const serverSideFunction = () => {
+  console.log(
+    `use multiple libraries, use env variables, interact with a database, process confidential information`
+  );
+  return "server result";
+};
+"
+
+* Create src/app/server-route folder with a page.tsx in it.
+** server-route/page.tsx **
+"
+import { serverSideFunction } from "../utils/server-utils";
+
+export default function ServerRoutePage() {
+  console.log("Server Route Rendered");
+  const result = serverSideFunction();
+  return (
+    <>
+      <h1>Server Route Page...</h1>
+      <p>{result}</p>
+    </>
+  );
+}
+"
+
+* Create src/app/client-route folder with a page.tsx in it.
+** client-route/page.tsx **
+"
+"use client"
+import { serverSideFunction } from "../utils/server-utils";
+
+export default function ClientRoutePage() {
+    console.log("Client Route Rendered");
+    const result = serverSideFunction();
+    return (
+      <>
+        <h1>Client Route Page...</h1>
+        <p>{result}</p>
+      </>
+    );
+  }
+"
+
+// This will give error as serverSideFunction is allowed only for server components because we used server-only in that file
+Error:
+"
+./src/app/utils/server-utils.ts:1:1
+Ecmascript file had an error
+> 1 | import "server-only"
+    | ^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export const serverSideFunction = () => {
+  4 |   console.log(
+
+You're importing a component that needs "server-only". That only works in a Server Component but one of its parents is marked with "use client", so it's a Client Component.
+Learn more: https://nextjs.org/docs/getting-started/react-essentials
+"
