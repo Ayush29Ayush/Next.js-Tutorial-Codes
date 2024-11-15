@@ -914,3 +914,66 @@ export default function DashboardPage() {
 #? Next.js 14 Tutorial - 51 - RSC Rendering Lifecycle
 
 * Refer Images
+Server Rendering Strategies
+a) Static Rendering
+b) Dynamic Rendering
+c) Streaming 
+
+#TODO => READ THIS
+
+a) Production Server:
+* Optimized build created once
+* Deployed directly
+b) Development Server:
+* Focuses on developer experience
+* Pages pre-rendered for every request
+* Frequent rebuilds for changes
+
+#? Next.js 14 Tutorial - 52 - Static Rendering
+
+* Refer Images
+
+#? Next.js 14 Tutorial - 53 - Dynamic Rendering
+
+* Refer Images
+
+#? Next.js 14 Tutorial - 54 - Streaming
+
+* Create a components folder and create product.tsx and reviews.tsx inside it.
+** components/product.tsx **
+"
+export const Product = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    return <div>Product</div>;
+};
+"
+
+** components/reviews.tsx **
+"
+export const Review = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 4000));
+    return <div>Review</div>;
+};
+"
+* In the src/app, create a product-detail folder and a page.tsx inside it.
+** product-detail/page.tsx **
+"
+import { Suspense } from "react";
+
+import { Product } from "../components/product";
+import { Review } from "../components/reviews";
+
+export default function ProductDetailPage() {
+  return (
+    <>
+      <div>Product Detail Page</div>
+      <Suspense fallback={<div>Loading Product...</div>}>
+        <Product />
+      </Suspense>
+      <Suspense fallback={<div>Loading Review...</div>}>
+        <Review />
+      </Suspense>
+    </>
+  );
+}
+"
