@@ -1045,3 +1045,7 @@ Ecmascript file had an error
 You're importing a component that needs "server-only". That only works in a Server Component but one of its parents is marked with "use client", so it's a Client Component.
 Learn more: https://nextjs.org/docs/getting-started/react-essentials
 "
+
+#? Next.js 14 Tutorial - 57 - Third Party Packages
+
+* Watch video and refer images. There's a issue with the package version at the moment.
