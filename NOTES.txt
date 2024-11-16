@@ -1049,3 +1049,79 @@ Learn more: https://nextjs.org/docs/getting-started/react-essentials
 #? Next.js 14 Tutorial - 57 - Third Party Packages
 
 * Watch video and refer images. There's a issue with the package version at the moment.
+
+#? Next.js 14 Tutorial - 58 - Context Providers
+
+* Create a provider file which will provide the context for any component. Create a theme-provider.tsx file in src/app/components folder.
+** theme-provider.tsx **
+"
+"use client";
+
+import { createContext, useContext } from "react";
+
+type Theme = {
+  colors: {
+    primary: string;
+    secondary: string;
+  };
+};
+
+const defaultTheme: Theme = {
+  colors: {
+    primary: "red",
+    secondary: "blue",
+  },
+};
+
+const ThemeContext = createContext<Theme>(defaultTheme);
+
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <ThemeContext.Provider value={defaultTheme}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => useContext(ThemeContext);
+"
+* Now wrap this ThemeProvider to the body of the RootLayout component.
+** app/layout.tsx **
+"
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <ThemeProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </ThemeProvider>
+    </html>
+  );
+}
+"
+
+* Now use this context in any component. For example in page.tsx of the app folder.
+** page.tsx **
+"
+"use client"
+// import { serverSideFunction } from "../utils/server-utils";
+import { useTheme } from "../components/theme-provider";
+
+export default function ClientRoutePage() {
+    console.log("Client Route Rendered");
+    // const result = serverSideFunction();
+    return (
+      <>
+        <h1 style={{ color: useTheme().colors.primary }}>Client Route Page...</h1>
+        {/* <p>{result}</p> */}
+      </>
+    );
+  }
+"
