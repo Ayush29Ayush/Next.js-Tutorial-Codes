@@ -1125,3 +1125,35 @@ export default function ClientRoutePage() {
     );
   }
 "
+
+#? Next.js 14 Tutorial - 59 - Client-only Code
+
+* Create a utils folder and a client-utils.ts file
+** client-utils.ts **
+"
+import "client-only";
+
+export const clientSideFunction = () => {
+    console.log(`use window object, use locat storage`);
+    return "client result";
+}
+"
+
+* Create src/app/client-route folder with a page.tsx in it.
+** client-route/page.tsx **
+"
+"use client";
+import { clientSideFunction } from "../utils/client-utils";
+
+export default function ClientRoutePage() {
+  console.log("Client Route Rendered");
+  const result = clientSideFunction();
+  return (
+    <>
+      <h1>Client Route Page...</h1>
+      <p>{result}</p>
+    </>
+  );
+}
+
+"
