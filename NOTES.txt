@@ -1269,3 +1269,12 @@ This will be the 3rd section which will be all about DATA FETCHING.
 #? Next.js 14 Tutorial - 69 - Request Memoization
 
 * Refer Video and Images
+
+#? Next.js 14 Tutorial - 70 - Time based Data Revalidation
+
+* Refer Video and Images
+
+#? Next.js 14 Tutorial - 71 - Client-side Data Fetching
+
+* Either go with traditional fetch method provided by JS or use a modern package named axios which provides lots of functionalities.
+* Second option is to go with TanStack Query with is best in the market right now.
