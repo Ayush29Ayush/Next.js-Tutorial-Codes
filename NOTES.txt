@@ -1155,5 +1155,68 @@ export default function ClientRoutePage() {
     </>
   );
 }
+"
 
+#? Next.js 14 Tutorial - 60 - Client Component Placement
+
+* Refer Images
+
+* Changing the parent node to client component makes its child components to be client components too.
+
+* For the trial and testing part, create a landing-page route folder with a page.tsx in it.
+** landing-page/page.tsx **
+"
+import { Navbar } from "../components/navbar";
+
+export default function LandingPage() {
+    return (
+        <>
+            <Navbar />
+            <main>
+                <h1>Page Heading...</h1>
+            </main>
+        </>
+    )
+}
+"
+
+* Also create 3 components in the components folder.
+** components/navbar.tsx **
+"
+import { NavLinks } from "./nav-links";
+import { NavSearch } from "./nav-search";
+
+export const Navbar = () => {
+  console.log("Navbar Rendered");
+  return (
+    <div>
+      <NavLinks />
+      <NavSearch />
+    </div>
+  );
+};
+"
+
+** components/nav-links.tsx **
+"
+export const NavLinks = () => {
+  {
+    console.log("NavLinks Rendered...");
+    return <div>List of Nav Links</div>;
+  }
+};
+"
+
+** components/nav-search.tsx **
+"
+"use client"
+
+import { useState } from "react";
+
+export const NavSearch = () => {
+  console.log("NavSearch Rendered...");
+
+  const [search, setSearch] = useState("");
+  return <div>Nav Search Input</div>;
+};
 "
