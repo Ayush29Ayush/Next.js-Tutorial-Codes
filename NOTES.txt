@@ -1257,3 +1257,15 @@ This will be the 3rd section which will be all about DATA FETCHING.
 * In Next.js 14, caching was a default feature when we used to use fetch which is now removed in Next.js 15
 * Run the json server using "node server"
 * Create a products route with page.tsx in it. 
+
+#? Next.js 14 Tutorial - 67 - Data Cache
+
+* The concept of caching is so that when a request is made, the request method will check if there is any cached data in the server, if yes then return that else make a request to the API and get latest data and return that data.
+
+#? Next.js 14 Tutorial - 68 - Opting Out of Caching
+
+* Refer video and documentation
+
+#? Next.js 14 Tutorial - 69 - Request Memoization
+
+* Refer Video and Images
