@@ -1251,3 +1251,9 @@ This will be the 3rd section which will be all about DATA FETCHING.
 * In the browser, use "http://localhost:3001/products" to see the products page.
 
 * To learn more about json-server, go to "https://www.youtube.com/playlist?list=PLC3y8-rFHvwhc9YZIdqNL5sWeTCGxF4ya"
+
+#? Next.js 14 Tutorial - 66 - Caching Data
+
+* In Next.js 14, caching was a default feature when we used to use fetch which is now removed in Next.js 15
+* Run the json server using "node server"
+* Create a products route with page.tsx in it. 
