@@ -1226,3 +1226,8 @@ export const NavSearch = () => {
 * Refer video in 2x
 * Code added in the components folder and a new route interleaving with page.tsx
 * 4 components in the components folder: ClientComponentOne, ClientComponentTwo, ServerComponentOne, ServerComponentTwo
+
+#? Next.js 14 Tutorial - 62 - Data Fetching
+
+We have already covered 2 sections for ROUTING and RENDERING.
+This will be the 3rd section which will be all about DATA FETCHING.
