@@ -1220,3 +1220,9 @@ export const NavSearch = () => {
   return <div>Nav Search Input</div>;
 };
 "
+
+#? Next.js 14 Tutorial - 61 - Interleaving Server and Client Components
+
+* Refer video in 2x
+* Code added in the components folder and a new route interleaving with page.tsx
+* 4 components in the components folder: ClientComponentOne, ClientComponentTwo, ServerComponentOne, ServerComponentTwo
