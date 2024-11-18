@@ -1231,3 +1231,7 @@ export const NavSearch = () => {
 
 We have already covered 2 sections for ROUTING and RENDERING.
 This will be the 3rd section which will be all about DATA FETCHING.
+
+#? Next.js 14 Tutorial - 63 - Fetching Data with Server Components
+
+* Create a users folder with a page.tsx in it. Refer that file.
