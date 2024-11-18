@@ -1235,3 +1235,19 @@ This will be the 3rd section which will be all about DATA FETCHING.
 #? Next.js 14 Tutorial - 63 - Fetching Data with Server Components
 
 * Create a users folder with a page.tsx in it. Refer that file.
+
+#? Next.js 14 Tutorial - 64 - Loading and Error States
+
+* In the users folder, create a loading.tsx and error.tsx files. Export them and they will be automatically used by Next.js in your page.tsx file.
+
+#? Next.js 14 Tutorial - 65 - JSON Server Setup
+
+* npm install json-server@0.17.4 --save-dev
+
+* Create a db.json file in the root directory.  
+* Create a server.js file in the root directory.
+
+* Run the server using "node server"
+* In the browser, use "http://localhost:3001/products" to see the products page.
+
+* To learn more about json-server, go to "https://www.youtube.com/playlist?list=PLC3y8-rFHvwhc9YZIdqNL5sWeTCGxF4ya"
