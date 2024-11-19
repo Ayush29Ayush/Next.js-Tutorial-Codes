@@ -1278,3 +1278,44 @@ This will be the 3rd section which will be all about DATA FETCHING.
 
 * Either go with traditional fetch method provided by JS or use a modern package named axios which provides lots of functionalities.
 * Second option is to go with TanStack Query with is best in the market right now.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+#? Learn Next.js 15 - Beginner Tutorial
+
+We will cover :-
+* Introduction to Next.js 15
+* Development environment
+* Project structure
+* Server and Client Components
+* App Router
+* Layouts
+* Navigation
+* Route Handlers
+* Data fetching strategies
+* Server Actions
+* Authentication ( We will use 3rd part powerful authentication tool called "clerk")
+
+a)  Refer this server actions part from mock-users/page.tsx
+* here rather than exposing the data like api keys to the client side, we are completing the process i.e adding the user using "use server" directive.
+
+
+b) Authentication with Clerk
+* Sign up
+* Sign in
+* Manage account
+* Show UI elements based on auth status
+* Protect routes based on auth status
+* Read session and user data
+* Sign out
+
+1. First sign up with a account in clerk dashboard
+2. Now follow the 4 steps given by clerk
+a) npm install @clerk/nextjs
+b) Create a .env.local and add these to it.
+"
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_Y29ycmVjdC1YXNwLTIxLmNsZXJrLmFjY291bnRzL
+CLERK_SECRET_KEY=sk_test_0QXNoVb6eVIH8WDjDjmd3jxBZmjEgfphSFA
+"
+c) Create a middleware.ts in the src directory.
+d) Wrap the layout of the app with ClerkProvider and use its provided functions. Refer app/layout.tsx and components/navigation.tsx 
